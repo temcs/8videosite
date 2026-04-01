@@ -1,0 +1,187 @@
+/* ============================================================
+   Generated Stylesheet – SiteForge Export
+   ============================================================ */
+:root {
+  --sf-bg: #0f172a;
+  --sf-section-bg: #0f172a;
+  --sf-text: #f1f5f9;
+  --sf-text-muted: #94a3b8;
+  --sf-accent: #6c63ff;
+  --sf-btn-bg: #6c63ff;
+  --sf-btn-text: #ffffff;
+  --sf-header-bg: rgba(15,23,42,0.97);
+  --sf-footer-bg: #020617;
+  --sf-card-bg: #1e293b;
+  --sf-border: #334155;
+  --sf-heading-color: #f8fafc;
+  --sf-link-color: #818cf8;
+}
+
+
+/* Theme Overrides */
+
+/* Backgrounds */
+section:not(.block-actions *), header:not(.block-actions *), footer:not(.block-actions *), nav:not(.block-actions *), .sf-hero:not(.block-actions *), .sf-section:not(.block-actions *) {
+  background: var(--sf-section-bg) !important;
+}
+nav:not(.block-actions *), .sf-navbar:not(.block-actions *) {
+  background: var(--sf-header-bg) !important;
+}
+footer:not(.block-actions *), .sf-footer:not(.block-actions *) {
+  background: var(--sf-footer-bg) !important;
+}
+.sf-footer:not(.block-actions *),
+.sf-footer:not(.block-actions *) p,
+.sf-footer:not(.block-actions *) li,
+.sf-footer:not(.block-actions *) div,
+.sf-footer:not(.block-actions *) span {
+  color: var(--sf-text-muted, var(--sf-text)) !important;
+}
+.sf-footer:not(.block-actions *) h1,
+.sf-footer:not(.block-actions *) h2,
+.sf-footer:not(.block-actions *) h3,
+.sf-footer:not(.block-actions *) h4,
+.sf-footer:not(.block-actions *) h5,
+.sf-footer:not(.block-actions *) h6 {
+  color: var(--sf-heading-color, var(--sf-text)) !important;
+}
+.sf-footer:not(.block-actions *) a {
+  color: var(--sf-link-color, var(--sf-accent)) !important;
+}
+
+/* Headings */
+h1:not(.block-actions *), h2:not(.block-actions *), h3:not(.block-actions *), h4:not(.block-actions *), h5:not(.block-actions *), h6:not(.block-actions *), .nav-brand:not(.block-actions *) {
+  color: var(--sf-heading-color, var(--sf-text)) !important;
+}
+
+/* Base Text */
+p:not(.block-actions *), li:not(.block-actions *), span:not(.nav-brand):not(.block-actions *), div[style*="color:"]:not(.canvas-block *), label:not(.block-actions *) {
+  color: var(--sf-text-muted, var(--sf-text)) !important;
+}
+
+/* Links */
+a:not([style*="padding"]):not(.block-actions *) {
+  color: var(--sf-link-color, var(--sf-accent)) !important;
+}
+
+/* Buttons */
+button:not(.block-actions *):not(.tb-btn):not(.tab-btn):not(.sf-accordion-trigger):not(.sf-pen-tool), 
+input[type="submit"]:not(.block-actions *), 
+input[type="button"]:not(.block-actions *),
+a[style*="padding"][style*="background"]:not(.block-actions *),
+a[class*="btn"]:not(.block-actions *),
+.sf-btn:not(.block-actions *) {
+  background: var(--sf-btn-bg) !important;
+  color: var(--sf-btn-text) !important;
+  border-color: transparent !important;
+}
+
+/* Outline Buttons */
+a[style*="padding"][style*="border"]:not([style*="background"]):not(.block-actions *),
+a[class*="btn-outline"]:not(.block-actions *),
+.hero-btn-sec:not(.block-actions *) {
+  background: transparent !important;
+  color: var(--sf-accent) !important;
+  border-color: var(--sf-accent) !important;
+}
+
+/* Icons */
+i[class*="fa-"]:not(.block-actions *):not(.tb-btn *):not(.tab-btn *):not(.layer-item *):not(.palette-item *):not(.sf-pen-tool *):not(.sf-pen-tool-container *) {
+  color: var(--sf-accent) !important;
+}
+
+/* Inputs */
+input:not([type="submit"]):not([type="button"]):not(.block-actions *), textarea:not(.block-actions *), select:not(.block-actions *) {
+  background: var(--sf-card-bg) !important;
+  color: var(--sf-text) !important;
+  border-color: var(--sf-border) !important;
+}
+
+/* Cards / Inner Boxes (Pattern matching inline styles) */
+div[style*="box-shadow"][style*="border-radius"]:not(.block-actions *):not(.canvas-block > div):not(.icon-picker-panel):not(.sf-pen-tool-container), 
+div[style*="background:#fff"]:not(.block-actions *):not(.canvas-block > div):not(.icon-picker-panel):not(.sf-pen-tool-container), 
+div[style*="background: #fff"]:not(.block-actions *):not(.canvas-block > div):not(.icon-picker-panel):not(.sf-pen-tool-container), 
+div[style*="background:#ffffff"]:not(.block-actions *):not(.canvas-block > div):not(.icon-picker-panel):not(.sf-pen-tool-container),
+div[style*="background: #ffffff"]:not(.block-actions *):not(.canvas-block > div):not(.icon-picker-panel):not(.sf-pen-tool-container) {
+  background: var(--sf-card-bg) !important;
+  border-color: var(--sf-border) !important;
+}
+
+/* hr */
+hr:not(.block-actions *) { border-color: var(--sf-border) !important; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; line-height: 1.6; color: #111827; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+video { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+.block-actions, .block-toolbar, .sf-pen-tool-container, .resize-handle-v, .resize-handle-h, .resize-handle-both, .sf-sub-resize-handle, .canvas-block.selected, .sf-sub-selected { display: none !important; }
+
+/* Fix overlapping sticky navbars */
+.sf-navbar { position: sticky; top: 0; z-index: 900; }
+
+/* Cart badge */
+.sf-cart-badge { position: absolute; top: -6px; right: -6px; background: #ef4444; color: #fff; font-size: 0.65rem; font-weight: 700; border-radius: 50%; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; }
+
+/* Global Container */
+.sf-container { width: 100%; max-width: 1200px; margin-left: auto; margin-right: auto; padding-left: 20px; padding-right: 20px; }
+
+/* Carousel / Slider */
+.sf-carousel { overflow: hidden; }
+
+/* Contact grid */
+@media (max-width: 768px) {
+  .sf-contact-grid, .sf-contact-form-row { grid-template-columns: 1fr !important; gap: 20px !important; }
+  .sf-text-block .sf-text-inner,
+  .sf-image-block .sf-image-inner,
+  .sf-video-block .sf-video-inner {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .sf-box-block > .container-inner[style*="display:grid"] {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .sf-container-block > .container-inner,
+  .sf-box-block > .container-inner[style*="display:flex"] {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+  }
+  .sf-container-block > .container-inner > *,
+  .sf-box-block > .container-inner[style*="display:flex"] > * {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sf-hero h1 { font-size: 2rem !important; }
+  .sf-text-block .sf-text-inner,
+  .sf-image-block .sf-image-inner,
+  .sf-video-block .sf-video-inner,
+  .sf-box-block > .container-inner[style*="display:grid"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  .sf-container-block,
+  .sf-image-block,
+  .sf-video-block,
+  .sf-text-block,
+  .sf-box-block {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .sf-container-block > .container-inner,
+  .sf-box-block > .container-inner {
+    gap: 16px !important;
+  }
+  .sf-container-block > .container-inner > *,
+  .sf-box-block > .container-inner > *,
+  .sf-video-block,
+  .sf-image-block {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
