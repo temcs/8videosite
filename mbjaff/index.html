@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>বিশেষ অফার | এখনই রেজিস্টার করুন</title>
+<meta name="description" content="রেজিস্ট্রেশন সম্পর্কে বিস্তারিত তথ্য জানুন এবং রেজিস্ট্রেশন পেজে যান।">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Sans Bengali","Noto Sans",Arial,sans-serif;background:#07111f;color:#fff;line-height:1.7}
+a{text-decoration:none;color:inherit}
+.container{width:min(1100px,92%);margin:auto}
+header{position:sticky;top:0;z-index:1000;background:rgba(5,15,28,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-size:24px;font-weight:900}.logo span{color:#35e56b}
+.nav-btn{background:#35e56b;color:#04120a;padding:10px 20px;border-radius:30px;font-weight:800;transition:.25s}
+.nav-btn:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(53,229,107,.25)}
+.hero{min-height:720px;display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(0,210,255,.18),transparent 30%),radial-gradient(circle at 10% 70%,rgba(53,229,107,.13),transparent 35%),linear-gradient(135deg,#07111f,#0b1830 55%,#06101c)}
+.hero::before{content:"";position:absolute;width:450px;height:450px;border:1px solid rgba(53,229,107,.15);border-radius:50%;right:-180px;top:80px}
+.hero-content{position:relative;z-index:2;max-width:720px;padding:80px 0}
+.badge{display:inline-block;background:rgba(53,229,107,.12);color:#54ed83;border:1px solid rgba(53,229,107,.35);padding:7px 15px;border-radius:30px;font-size:14px;font-weight:700;margin-bottom:22px}
+.hero h1{font-size:clamp(42px,7vw,76px);line-height:1.05;font-weight:950;letter-spacing:-2px;margin-bottom:24px}
+.hero h1 .green{color:#35e56b}.hero h1 .yellow{color:#ffd43b}
+.hero p{color:#c4cfdd;font-size:19px;max-width:650px;margin-bottom:34px}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px}
+.primary-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#35e56b;color:#04120a;padding:15px 30px;border-radius:12px;font-weight:900;font-size:18px;box-shadow:0 10px 35px rgba(53,229,107,.2);transition:.25s}
+.primary-btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(53,229,107,.3)}
+.secondary-btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 28px;border-radius:12px;border:1px solid rgba(255,255,255,.15);color:#fff;font-weight:700;transition:.25s}
+.secondary-btn:hover{background:rgba(255,255,255,.06)}
+.offer-wrap{margin-top:-70px;position:relative;z-index:10}
+.offer{background:linear-gradient(135deg,#101f34,#0b1728);border:1px solid rgba(255,255,255,.1);border-radius:25px;padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:30px;box-shadow:0 25px 70px rgba(0,0,0,.35)}
+.offer h2{font-size:32px;margin-bottom:12px}.offer p{color:#b9c5d4}
+.highlight{border-radius:20px;padding:30px;background:linear-gradient(135deg,rgba(53,229,107,.14),rgba(0,180,255,.08));border:1px solid rgba(53,229,107,.2);text-align:center}
+.highlight-number{font-size:64px;font-weight:950;color:#35e56b;line-height:1;margin:10px 0}.highlight small{color:#c2ccda}
+.section{padding:100px 0}.section-title{text-align:center;max-width:700px;margin:0 auto 50px}
+.section-title h2{font-size:40px;margin-bottom:12px}.section-title p{color:#aeb9c8}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature{padding:30px;border-radius:20px;background:#0c192b;border:1px solid rgba(255,255,255,.08);transition:.25s}
+.feature:hover{transform:translateY(-5px);border-color:rgba(53,229,107,.3)}
+.feature-icon{width:55px;height:55px;display:grid;place-items:center;border-radius:15px;background:rgba(53,229,107,.1);font-size:27px;margin-bottom:20px}
+.feature h3{font-size:21px;margin-bottom:8px}.feature p{color:#aeb9c8;font-size:15px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.step{text-align:center;padding:30px 20px}
+.step-number{width:60px;height:60px;margin:0 auto 18px;display:grid;place-items:center;border-radius:50%;background:#35e56b;color:#04120a;font-size:23px;font-weight:900}
+.step p{color:#aeb9c8;font-size:15px}
+.cta{padding:70px 30px;text-align:center;border-radius:28px;background:radial-gradient(circle at 50% 0%,rgba(53,229,107,.18),transparent 55%),#0c192b;border:1px solid rgba(53,229,107,.18)}
+.cta h2{font-size:clamp(30px,5vw,48px);margin-bottom:12px}.cta p{color:#b9c5d4;max-width:650px;margin:0 auto 28px}
+footer{padding:35px 0;border-top:1px solid rgba(255,255,255,.08);color:#8995a5;text-align:center;font-size:13px}
+.notice{max-width:800px;margin:15px auto 0;color:#6f7b8b;font-size:12px}
+@media(max-width:800px){.hero{min-height:650px}.hero-content{padding:70px 0 110px}.hero h1{letter-spacing:-1px}.offer{grid-template-columns:1fr;padding:25px}.features,.steps{grid-template-columns:1fr}.section{padding:75px 0}.nav-btn{padding:8px 14px;font-size:14px}.logo{font-size:20px}}
+@media(max-width:480px){.hero p{font-size:16px}.hero-buttons{flex-direction:column}.primary-btn,.secondary-btn{width:100%}.offer{border-radius:18px}.highlight-number{font-size:52px}}
+</style>
+</head>
+<body>
+<header>
+<div class="container nav">
+<div class="logo"><span>বিশেষ</span> অফার</div>
+<a class="nav-btn register-link" href="https://www.mamubaji.site/en-bd/register?aff=6504e0e129" target="_blank" rel="noopener noreferrer">রেজিস্টার করুন</a>
+</div>
+</header>
+
+<main>
+<section class="hero">
+<div class="container">
+<div class="hero-content">
+<div class="badge">🎁 বিশেষ রেজিস্ট্রেশন অফার</div>
+<h1>রেজিস্টার করুন<br><span class="green">বিশেষ অফার</span> <span class="yellow">উপভোগ করুন!</span></h1>
+<p>রেজিস্ট্রেশন প্রক্রিয়া সম্পর্কে বিস্তারিত তথ্য জানুন। আপনার জন্য উপলব্ধ অফার ও সুবিধাগুলো দেখতে নিচের বাটনে ক্লিক করুন।</p>
+<div class="hero-buttons">
+<a class="primary-btn register-link" href="https://www.mamubaji.site/en-bd/register?aff=6504e0e129" target="_blank" rel="noopener noreferrer">🚀 এখনই রেজিস্টার করুন</a>
+<a class="secondary-btn" href="#details">বিস্তারিত দেখুন ↓</a>
+</div>
+</div>
+</div>
+</section>
+
+<div class="container offer-wrap">
+<div class="offer">
+<div>
+<h2>🎁 রেজিস্ট্রেশন অফার</h2>
+<p>রেজিস্ট্রেশন করার আগে অফারের নিয়ম ও প্রযোজ্য শর্তগুলো ভালোভাবে দেখে নিন।</p>
+<br>
+<p>নিচের বাটনে ক্লিক করলে আপনাকে রেজিস্ট্রেশন পেজে নিয়ে যাওয়া হবে।</p>
+</div>
+<div class="highlight">
+<small>বর্তমান অফার</small>
+<div class="highlight-number">৳৫৮</div>
+<strong>ফ্রী বোনাস</strong>
+<br><br>
+<a class="primary-btn register-link" href="https://www.mamubaji.site/en-bd/register?aff=6504e0e129" target="_blank" rel="noopener noreferrer">অফারটি দেখুন →</a>
+</div>
+</div>
+</div>
+
+<section class="section" id="details">
+<div class="container">
+<div class="section-title"><h2>কীভাবে শুরু করবেন?</h2><p>মাত্র কয়েকটি সহজ ধাপে রেজিস্ট্রেশন সম্পন্ন করুন।</p></div>
+<div class="steps">
+<div class="step"><div class="step-number">১</div><h3>রেজিস্ট্রেশন পেজে যান</h3><p>নিচের রেজিস্টার বাটনে ক্লিক করে রেজিস্ট্রেশন পেজে প্রবেশ করুন।</p></div>
+<div class="step"><div class="step-number">২</div><h3>তথ্য পূরণ করুন</h3><p>রেজিস্ট্রেশন পেজে প্রয়োজনীয় তথ্য সঠিকভাবে পূরণ করুন।</p></div>
+<div class="step"><div class="step-number">৩</div><h3>নির্দেশনা অনুসরণ করুন</h3><p>রেজিস্ট্রেশন সম্পন্ন করার পর প্ল্যাটফর্মের দেওয়া নির্দেশনা অনুসরণ করুন।</p></div>
+</div>
+</div>
+</section>
+
+<section class="section" style="padding-top:0">
+<div class="container">
+<div class="section-title"><h2>কেন বিস্তারিত দেখবেন?</h2><p>রেজিস্ট্রেশনের আগে প্রয়োজনীয় তথ্য জেনে নিন।</p></div>
+<div class="features">
+<div class="feature"><div class="feature-icon">📝</div><h3>সহজ রেজিস্ট্রেশন</h3><p>রেজিস্ট্রেশন পেজে গিয়ে প্রয়োজনীয় তথ্য প্রদান করে প্রক্রিয়াটি সম্পন্ন করুন।</p></div>
+<div class="feature"><div class="feature-icon">🎁</div><h3>অফার সম্পর্কে জানুন</h3><p>উপলব্ধ অফার ও প্রযোজ্য নিয়মগুলো রেজিস্ট্রেশনের আগে দেখে নিন।</p></div>
+<div class="feature"><div class="feature-icon">🔒</div><h3>তথ্য যাচাই করুন</h3><p>যেকোনো রেজিস্ট্রেশনের আগে প্ল্যাটফর্মের নিয়ম ও শর্তাবলী পড়ে নিন।</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+<div class="cta">
+<h2>এখনই শুরু করতে প্রস্তুত?</h2>
+<p>নিচের বাটনে ক্লিক করে রেজিস্ট্রেশন পেজে যান এবং প্রযোজ্য অফার সম্পর্কে বিস্তারিত দেখুন।</p>
+<a class="primary-btn register-link" href="https://www.mamubaji.site/en-bd/register?aff=6504e0e129" target="_blank" rel="noopener noreferrer">👉 এখনই রেজিস্টার করুন</a>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="container">
+<p>© ২০২৬ — সকল অধিকার সংরক্ষিত।</p>
+<p class="notice">অফার, বোনাস, যোগ্যতা এবং অন্যান্য শর্ত পরিবর্তিত হতে পারে। রেজিস্ট্রেশনের আগে সংশ্লিষ্ট প্ল্যাটফর্মের নিয়ম ও শর্তাবলী ভালোভাবে পড়ে নিন। প্রযোজ্য আইন ও প্ল্যাটফর্মের নীতিমালা মেনে চলুন।</p>
+</div>
+</footer>
+
+<script>
+const registerURL="https://www.mamubaji.site/en-bd/register?aff=6504e0e129";
+document.querySelectorAll(".register-link").forEach(button=>{
+  button.addEventListener("click",function(){
+    console.log("Registration button clicked");
+    this.href=registerURL;
+  });
+});
+
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.style.opacity="1";
+      entry.target.style.transform="translateY(0)";
+    }
+  });
+},{threshold:.12});
+
+document.querySelectorAll(".feature,.step,.offer").forEach(element=>{
+  element.style.opacity="0";
+  element.style.transform="translateY(20px)";
+  element.style.transition="opacity .6s ease, transform .6s ease";
+  observer.observe(element);
+});
+</script>
+</body>
+</html>
