@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Hind Siliguri', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* A very vibrant moving gradient background to show off the glass blur */
+    background: linear-gradient(45deg, #1e0b36, #3a1c71, #24ee46, #03b3c0);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    overflow-x: hidden;
+    position: relative;
+    color: #ffffff;
+    perspective: 1000px;
+    padding: 40px 20px;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Background floating blobs for extra color behind glass */
+.blob {
+    position: fixed;
+    filter: blur(90px);
+    z-index: 0;
+    border-radius: 50%;
+    animation: float 12s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: #00f2fe;
+    top: -100px;
+    left: -100px;
+    animation-delay: 0s;
+}
+
+.blob-2 {
+    width: 350px;
+    height: 350px;
+    background: #4facfe;
+    bottom: -50px;
+    right: -100px;
+    animation-delay: -3s;
+}
+
+.blob-3 {
+    width: 300px;
+    height: 300px;
+    background: #f093fb;
+    bottom: 30%;
+    left: 20%;
+    animation-delay: -6s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(50px, -50px) scale(1.2); }
+    66% { transform: translate(-30px, 30px) scale(0.8); }
+}
+
+/* Hide the old static background animation since we have a new gradient body */
+.background-animation {
+    display: none;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* TRUE GLASSMORPHISM */
+.glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    /* Lighter borders on top/left for the glass reflection effect */
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: transform 0.1s ease-out;
+}
+
+/* Hero Card Animations */
+.hero-card {
+    padding: 50px 40px;
+    text-align: center;
+    animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.icon-container {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-left: 1px solid rgba(255, 255, 255, 0.6);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15);
+    animation: iconBounce 2s infinite ease-in-out;
+}
+
+@keyframes iconBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.25); }
+}
+
+.icon-container svg {
+    color: white;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.register-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-left: 1px solid rgba(255, 255, 255, 0.6);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-decoration: none;
+    padding: 18px 40px;
+    border-radius: 9999px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.register-btn.pulse-anim {
+    animation: buttonPulse 2s infinite;
+}
+
+@keyframes buttonPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 255, 255, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
+}
+
+.register-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    transition: all 0.5s ease;
+}
+
+.register-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.3);
+    animation: none; /* stop pulsing on hover */
+}
+
+.register-btn:hover::before {
+    left: 100%;
+}
+
+.register-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.register-btn:hover svg {
+    transform: translateX(6px);
+}
+
+/* Details Card Animations */
+.details-card {
+    padding: 40px;
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.details-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.details-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.steps-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Sub-items are also glass */
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 20px;
+    border-radius: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(-20px);
+    animation: fadeRight 0.5s forwards;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeRight {
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.step-1 { animation-delay: 0.6s; }
+.step-2 { animation-delay: 0.8s; }
+.step-3 { animation-delay: 1.0s; }
+
+.step-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px) !important;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.step-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: rgba(255, 255, 255, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.6);
+    border-left: 1px solid rgba(255, 255, 255, 0.6);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.step-item:hover .step-icon {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1) rotate(5deg);
+}
+
+.step-content h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 8px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
+.step-content p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 2.2rem; }
+    .description { font-size: 1.1rem; }
+    .hero-card, .details-card { padding: 30px 20px; }
+    .step-item { flex-direction: column; text-align: center; align-items: center; gap: 15px; }
+}
